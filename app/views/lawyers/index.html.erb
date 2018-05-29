@@ -1,7 +1,18 @@
+
 <html>
 <head>
   <h1>Lawyers#index</h1>
   <p>Find me in app/views/lawyers/index.html.erb</p>
+
+
+<ul>
+  <% @lawyers.each do |lawyer| %>
+    <li>
+    <%= lawyer.user.first_name %>
+    <%= lawyer.specialties %>
+    </li>
+  <% end %>
+</ul>
 
   <% if params[:search] %>
   <% end %>

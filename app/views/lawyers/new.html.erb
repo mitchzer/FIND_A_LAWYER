@@ -1,2 +1,27 @@
 <h1>Lawyers#new</h1>
-<p>Find me in app/views/lawyers/new.html.erb</p>
+
+<p>Please create you lawyer profile</p>
+
+<%= simple_form_for(@lawyer) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="form-inputs">
+ <%= f.input :specialties %>
+ <%= f.input :country, as: :text %>
+ <%= f.input :city %>
+ <%= f.input :address %>
+ <%= f.input :price_per_hour %>
+ <%= f.input :bar %>
+ <%= f.input :languages %>
+ <%= f.input :qualification %>
+ <%= f.input :professional_email %>
+ <%= f.input :professional_phone_number %>
+ <%= f.input :description %>
+</div>
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
+
+
+<% end %>
