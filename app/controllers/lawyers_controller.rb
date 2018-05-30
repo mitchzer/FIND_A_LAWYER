@@ -4,7 +4,7 @@ class LawyersController < ApplicationController
   end
 
   def show
-    @lawyer = Lawyer.find(:id)
+    @lawyer = Lawyer.find(params[:id])
     authorize @lawyer
   end
 
