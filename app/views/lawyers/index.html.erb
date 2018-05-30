@@ -1,68 +1,37 @@
 
 <html>
 <head>
-  <h1>Lawyers#index</h1>
-  <p>Find me in app/views/lawyers/index.html.erb</p>
+  <h2 class="text-center">Your list of lawyers</h2>
 
-
-<ul>
-  <% @lawyers.each do |lawyer| %>
-    <li>
-    <%= lawyer.user.first_name %>
-    <%= lawyer.specialties %>
-    </li>
-  <% end %>
-</ul>
-
-  <% if params[:search] %>
-  <% end %>
   <div class="container">
-    <h2 class="text-center">Your list of lawyers</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
-          <span class="card-category">Lawyer</span>
-          <div class="card-description">
-            <h2>Peter Richter</h2>
-            <p>Business Law</p>
+  <% @lawyers.each do |lawyer| %>
+
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="cards">
+        <div class="card">
+          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
+            <span class="card-category"><%= lawyer.specialties.first %></span>
+            <div class="card-description">
+              <h2><%= lawyer.user.first_name %></h2>
+              <p><%= lawyer.address %></p>
+            </div>
+            <img class="card-user avatar avatar-large" src="images/Hold.jpg">
+            <a class="card-link" href="#" ></a>
           </div>
-          <img class="card-user avatar avatar-large" src="images/Hold.jpg">
-          <a class="card-link" href="#" ></a>
-        </div>
-        <div class="card-footer">
-          <p>Member since 10/05/18</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
-          <span class="card-category">Jugde</span>
-          <div class="card-description">
-            <h2>Dr. Mitch Wlodarczyk</h2>
-            <p>Civil Law, Building Law</p>
+          <div class="card-footer">
+            <p><%= lawyer.professional_email %></p>
+            <p>Member since 10/05/18</p>
           </div>
-          <img class="card-user avatar avatar-large" src="images/gab.png">
-          <a class="card-link" href="#" ></a>
-        </div>
-        <div class="card-footer">
-          <p>Member since 10/05/18</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
-          <span class="card-category">Lawyer</span>
-          <div class="card-description">
-            <h2>Christian Rath</h2>
-            <p>Inheritance Law</p>
-          </div>
-          <img class="card-user avatar avatar-large" src="images/Richter.jpg">
-          <a class="card-link" href="#" ></a>
-        </div>
-        <div class="card-footer">
-          <p>Member since 10/05/18</p>
         </div>
       </div>
     </div>
+      <% end %>
   </div>
+
+
+
+
 </head>
 <body>
 </body>
