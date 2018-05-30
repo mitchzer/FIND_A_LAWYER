@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_05_29_153725) do
+=======
+ActiveRecord::Schema.define(version: 2018_05_30_115633) do
+>>>>>>> adb87e209b777ca98e5ac25069a219ad3843328c
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,8 +22,6 @@ ActiveRecord::Schema.define(version: 2018_05_29_153725) do
   create_table "appointments", force: :cascade do |t|
     t.string "date"
     t.string "time"
-    t.text "description"
-    t.boolean "lawyer_validation"
     t.bigint "user_id"
     t.bigint "lawyer_id"
     t.datetime "created_at", null: false
@@ -30,16 +32,9 @@ ActiveRecord::Schema.define(version: 2018_05_29_153725) do
 
   create_table "lawyers", force: :cascade do |t|
     t.string "specialties", default: [], array: true
-    t.string "country"
-    t.string "city"
     t.string "address"
-    t.integer "price_per_hour"
-    t.string "bar"
-    t.string "languages", default: [], array: true
     t.text "qualification"
     t.string "professional_email"
-    t.string "professional_phone_number"
-    t.text "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,8 +55,11 @@ ActiveRecord::Schema.define(version: 2018_05_29_153725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"
+<<<<<<< HEAD
     t.string "last_name"
     t.boolean "lawyer"
+=======
+>>>>>>> adb87e209b777ca98e5ac25069a219ad3843328c
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
