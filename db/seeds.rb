@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first
 
 
-User.create!(first_name: "Abel", email: "Abel@Abel.Abel", password: "metzplusgrand")
-User.create!(first_name: "Abdel", email: "Abdel@Abdel.Abdel", password: "metzplusgrand2")
-User.create!(first_name: "Alphonse", email: "Alphonse@Alphonse.Alphonse", password: "metzplusgrand3")
-User.create!(first_name: "Alain", email: "Alain@Alain.Alain", password: "metzplusgrand4")
+@user1 = User.create!(first_name: "Abel", email: "Abel@Abel.Abel", password: "metzplusgrand")
+@user2 = User.create!(first_name: "Alex", email: "Alex@Alex.Alex", password: "metzplusgrand2")
+@user3 = User.create!(first_name: "Alphonse", email: "Alphonse@Alphonse.Alphonse", password: "metzplusgrand3")
+@user4 = User.create!(first_name: "Alain", email: "Alain@Alain.Alain", password: "metzplusgrand4")
 
-Lawyer.create!(user_id: "1", specialties: ["crime"])
-Lawyer.create!(user_id: "2", specialties: ["family"])
-Lawyer.create!(user_id: "3", specialties: ["business"])
+Lawyer.create!( name: "Martin Richter", specialties: ["crime"], address: "Rue de lawyer 123", email: "Richter@Richter.Richter", user: @user1 )
+Lawyer.create!( name: "Anthony Lawyer", specialties: ["business"], address: "Rue de Richter 123", email: "Lawyer@Lawyer.Lawyer", user: @user2 )
+Lawyer.create!( name: "Mitch Wlodarczyk", specialties: ["civil"], address: "Rue de Mitch 123", email: "Mitch@Mitch.Mitch", user: @user3 )
