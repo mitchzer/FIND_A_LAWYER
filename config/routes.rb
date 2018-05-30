@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   # get 'lawyers/edit'
   # get 'lawyers/update'
   # get 'lawyers/delete'
-  # get 'users/edit', "users#edit"
   # get 'users/update'
   # get 'users/delete'
    devise_for :users
