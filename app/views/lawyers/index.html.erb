@@ -16,8 +16,9 @@
               <h2><%= lawyer.user.first_name %></h2>
               <p><%= lawyer.address %></p>
             </div>
-            <img class="card-user avatar avatar-large" src="images/Hold.jpg">
-            <a class="card-link" href="#" ></a>
+            <%= link_to lawyer_path(lawyer), class: "card-link" do %>
+            <% end %>
+
           </div>
           <div class="card-footer">
             <p><%= lawyer.professional_email %></p>
