@@ -8,9 +8,7 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
-.card:hover {
-  margin-top: -5px;
-}
+
 .card-body {
   height: 180px;
   background-size: cover;
@@ -78,7 +76,4 @@
   padding: 0 10px;
   color: black;
   opacity: 0.2;
-}
-.card-footer .controls i:hover{
-  opacity: 0.4;
 }
