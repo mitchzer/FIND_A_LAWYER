@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :personal_email])
   end
 
+
+def after_sign_in_path_for(resource)
+  lawyers_path
+end
+
+
   private
 
   def skip_pundit?
