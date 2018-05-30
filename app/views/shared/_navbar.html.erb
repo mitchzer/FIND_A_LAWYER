@@ -4,18 +4,29 @@
     <%= image_tag "lawyer.png", height: 50 %>
   <% end %>
 
+
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
       <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "Appointments", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Profile", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <form class="form-inline search-bar" action="#" accept-charset="UTF-8" method="get">
+        <div class="input-group">
+          <input placeholder="Search Lawyers" class="form-control" id="query" title="Words expected" type="text" name="keyword">
+          <span class="input-group-btn">
+
+            <button name="button" type="submit" class="btn btn-default">
+              <i class="fas fa-search"></i>
+            </button>
+          </span>
+        </div>
+    </form>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTQxNzI4NTg2OTU1NDk5MDE3/donald_trump_photo_michael_stewartwireimage_gettyimages_169093538_croppedjpg.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -24,9 +35,10 @@
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <i class="fas fa-calendar-alt"></i>  <%= t(".settings", default: "Appointments") %>
               <% end %>
             </li>
+
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -53,4 +65,3 @@
     </div>
   </div>
 </div>
-
