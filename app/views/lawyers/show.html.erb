@@ -1,3 +1,34 @@
-<h1>Lawyers#show</h1>
-<p>Find me in app/views/lawyers/show.html.erb</p>
-<img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://law.uky.edu/sites/law.uky.edu/files/field/image/law%20photo.jpg');">
+
+
+<div class="profile text-center">
+<div class="main">
+          <div class="main-content">
+            <h2 style="color: black"><%= @lawyer.user.first_name %></h2>
+            <p>Speciality: <%= @lawyer.specialties.first.capitalize %></p>
+
+<!-- <p>Find me in app/views/lawyers/show.html.erb</p> -->
+<img src='https://kitt.lewagon.com/placeholder/users/alex-felix'  width="130">
+
+            <a href="#" class="btn btn-primary">Make an appointment</a>
+  </div>
+        </div>
+
+<div class="description">
+          <div class="description-content">
+            <h2 style="color: black; margin-bottom: 15px;">Why hire <%= @lawyer.user.first_name.capitalize %> ?</h2>
+            <br>
+            <p class="text-justify" style="color: black;">
+               I am a <%= @lawyer.specialties.first %> lawyer with over 15 years of practical experience.  I pride myself on providing a highly professional, first class legal service to all our clients.
+            </p>
+            <p>
+              Location: <%= @lawyer.address.capitalize %>
+            </p>
+            <p>
+              Get in touch: <%= @lawyer.professional_email %>
+            </p>
+          </div>
+        </div>
+</div>
+</div>
