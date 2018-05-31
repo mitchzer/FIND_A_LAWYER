@@ -1,6 +1,11 @@
 class LawyersController < ApplicationController
   def index
+    if params[:term]
+      @lawyers = policy_scope(Lawyer).search_by_specialties_and_address(params[:term])
+    else
+      # @lawyers = Lawyer.all
     @lawyers = policy_scope(Lawyer)
+    end
   end
 
   def show
