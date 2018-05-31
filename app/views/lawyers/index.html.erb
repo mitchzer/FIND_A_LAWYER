@@ -1,8 +1,20 @@
 
-  <h2 class="text-center">Your list of lawyers</h2>
-  <div class="wrapper">
 
-    <div class="container">
+
+
+
+  <div class="wrapper" style ="background-color: white">
+
+<div class="content">
+    <div class="container-map">
+
+  <h2 class="text-center">Choose your lawyer!</h2>
+
+      <p style="text-align: center;"><a href="/lawyers" class="btn btn-primary btn-sm">See all lawyers</a>
+</p>
+
+
+
       <% @lawyers.each do |lawyer| %>
       <div class="col-xs-12 col-sm-6 ">
         <div class="cards">
@@ -24,6 +36,8 @@
         </div>
       </div>
       <% end %>
+  </div>
+
 
       <div id="map"
   style="width: 100%;
@@ -31,4 +45,6 @@
   data-markers="<%= @mapping.to_json %>">map</div>
 
   </div>
+
+
 
