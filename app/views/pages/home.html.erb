@@ -4,6 +4,14 @@
     <h1>Welcome to Find a Lawyer !</h1>
     <p>We can make it legal</p>
 
+      <%= form_tag lawyers_path, class: "form-inline", method: :get do %>
+      <%= text_field_tag 'term', params[:term], placeholder: "Robert Kardashian", class: "form-control" %>
+
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          Search
+      <% end %>
+      <% end %>
+
 
 
 <!--
