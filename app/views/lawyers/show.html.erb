@@ -36,6 +36,12 @@
         <p>Location: <%= @lawyer.address.capitalize %></p>
         <p>Get in touch: <%= @lawyer.user.email %></p>
       </div>
+      <% if current_user == @lawyer.user %>
+        <%= link_to "edit my profile", edit_lawyer_path %>
+      <% end %>
+      <% if current_user == @lawyer.user %>
+        <%= link_to "delete my profile", lawyer_path(@lawyer), method: :delete, data: {confirm: "Are you sure you want to delete your profile ?"} %>
+      <% end %>
   </div>
 </div>
 </div>

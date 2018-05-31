@@ -1,6 +1,23 @@
 class LawyersController < ApplicationController
+
   def index
+    if params[:term]
+      @lawyers = policy_scope(Lawyer).search_by_specialties_and_address(params[:term])
+    else
+      # @lawyers = Lawyer.all
     @lawyers = policy_scope(Lawyer)
+    end
+
+    @lawyer_markers = @lawyers.where.not(latitude: nil, longitude: nil)
+
+    @mapping = @lawyer_markers.map do |lawyer|
+      {
+        lat: lawyer.latitude,
+        lng: lawyer.longitude
+      }
+
+    end
+
   end
 
   def show
@@ -33,10 +50,18 @@ class LawyersController < ApplicationController
     @lawyer = Lawyer.find(params[:id])
     @lawyer.update(lawyer_params)
     authorize @lawyer
+    if @lawyer.save
+      redirect_to lawyer_path
+    else
+      render :edit
+    end
   end
 
-  def delete
+  def destroy
+    @lawyer = Lawyer.find(params[:id])
+    @lawyer.destroy
     authorize @lawyer
+    redirect_to lawyers_path
   end
 
   private

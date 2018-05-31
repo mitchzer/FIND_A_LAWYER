@@ -4,6 +4,18 @@
     <h1>Welcome to Find a Lawyer !</h1>
     <p>We can make it legal</p>
 
+      <%= form_tag lawyers_path, class: "form-inline", method: :get do %>
+      <%= text_field_tag 'term', params[:term], placeholder: "Robert Kardashian", class: "form-control" %>
+
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          Search
+      <% end %>
+      <% end %>
+
+
+
+<!--
+
     <form class="form-inline search-bar" action="#" accept-charset="UTF-8" method="get">
         <div class="input-group">
           <input placeholder="Robert Kardashian" class="form-control" id="query" title="Words expected" type="text" name="keyword">
@@ -14,13 +26,13 @@
             </button>
           </span>
         </div>
-    </form>
+    </form> -->
 <!-- <p>As a lawyer, get visibility and develop your own independant activity</p> -->
 <br>
 <br>
 <br>
 <br>
-<%= link_to "I am a lawyer", new_user_registration_path, class: "btn-medium" %>
+<%= link_to "I am a lawyer", new_lawyer_path, class: "btn-medium" %>
 
   </div>
 </div>

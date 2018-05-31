@@ -1,4 +1,5 @@
 import "bootstrap";
+
 import flatpickr from 'flatpickr';
 
 const startDateinput = document.getElementById('appointment_date');
@@ -27,3 +28,12 @@ if (startDateinput) {
 
 
 }
+
+import mapping from "../components/map";
+
+const mapElement = document.getElementById("map");
+
+
+mapping(mapElement);
+
+
