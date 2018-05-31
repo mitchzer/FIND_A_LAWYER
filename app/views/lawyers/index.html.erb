@@ -7,7 +7,7 @@
   <% @lawyers.each do |lawyer| %>
 
 
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-md-4">
       <div class="cards">
         <div class="card">
           <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
@@ -30,8 +30,7 @@
       <% end %>
   </div>
 
-
-
+  <%= link_to "Create my own lawyer profile", new_lawyer_path %>
 
 </head>
 <body>

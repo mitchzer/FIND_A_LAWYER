@@ -1,4 +1,5 @@
 class LawyersController < ApplicationController
+
   def index
     @lawyers = policy_scope(Lawyer)
   end
@@ -33,10 +34,18 @@ class LawyersController < ApplicationController
     @lawyer = Lawyer.find(params[:id])
     @lawyer.update(lawyer_params)
     authorize @lawyer
+    if @lawyer.save
+      redirect_to lawyer_path
+    else
+      render :edit
+    end
   end
 
-  def delete
+  def destroy
+    @lawyer = Lawyer.find(params[:id])
+    @lawyer.destroy
     authorize @lawyer
+    redirect_to lawyers_path
   end
 
   private
