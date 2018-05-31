@@ -1,7 +1,12 @@
 
-  <h2 class="text-center">Your list of lawyers</h2>
+<h2 class="text-center">Your list of lawyers</h2>
 
+
+<div class="container">
+  <% @lawyers.each do |lawyer| %>
+  =======
   <div class="wrapper">
+    >>>>>>> master
 
     <div class="container">
       <% @lawyers.each do |lawyer| %>
@@ -9,9 +14,9 @@
         <div class="cards">
           <div class="card">
             <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
-            <span class="card-category"><%= lawyer.specialty.name %></span>
+              <span class="card-category"><%= lawyer.specialty.name %></span>
               <div class="card-description">
-              <h2><%= lawyer.user.first_name.capitalize %></h2>
+                <h2><%= lawyer.user.first_name.capitalize %></h2>
                 <p><%= lawyer.address %></p>
               </div>
               <%= link_to lawyer_path(lawyer), class: "card-link" do %>
@@ -25,17 +30,19 @@
           </div>
         </div>
       </div>
-      <% end %>
+    </div>
+    <% end %>
+    <% end %>
 
   </div>
 
   <%= link_to "Create my own lawyer profile", new_lawyer_path %>
 
-      <div id="map"
+  <div id="map"
   style="width: 100%;
   height: 600px;"
   data-markers="<%= @mapping.to_json %>">map</div>
+</div>
 
-  </div>
 
 
