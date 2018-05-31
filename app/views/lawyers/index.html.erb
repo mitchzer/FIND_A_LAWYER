@@ -1,10 +1,5 @@
 
-<html>
-<head>
-  <h2 class="text-center">Your list of lawyers</h2>
 
-  <div class="container">
-  <% @lawyers.each do |lawyer| %>
 
 
     <div class="col-xs-12 col-sm-4">
@@ -26,15 +21,12 @@
           </div>
         </div>
       </div>
-    </div>
       <% end %>
+
+      <div id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @mapping.to_json %>">map</div>
+
   </div>
-
-
-
-
-</head>
-<body>
-</body>
-</html>
 
