@@ -9,7 +9,8 @@
 
   <h2 class="text-center">Choose your lawyer!</h2>
 
-      <p style="text-align: center;"><a href="/lawyers" class="btn btn-primary btn-sm">See all lawyers</a>
+      <p style="text-align: center;"><a href="/lawyers" class="btn btn-primary btn-sm">See all lawyers</a> or
+  <%= link_to "Create my own lawyer profile", new_lawyer_path %>
 </p>
 
 
@@ -37,12 +38,11 @@
         </div>
       </div>
     <% end %>
-    </div>
 
-  </div>
 
-  <%= link_to "Create my own lawyer profile", new_lawyer_path %>
 
+
+ </div>
   <div id="map"
   style="width: 100%;
   height: 600px;"
