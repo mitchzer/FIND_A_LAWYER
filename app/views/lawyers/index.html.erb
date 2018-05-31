@@ -14,9 +14,9 @@
       <div class="cards">
         <div class="card">
           <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
-            <span class="card-category"><%= lawyer.specialties.first %></span>
+            <span class="card-category"><%= lawyer.specialty.name %></span>
             <div class="card-description">
-              <h2><%= lawyer.user.first_name %></h2>
+              <h2><%= lawyer.user.first_name.capitalize %></h2>
               <p><%= lawyer.address %></p>
             </div>
             <%= link_to lawyer_path(lawyer), class: "card-link" do %>
@@ -24,8 +24,8 @@
 
           </div>
           <div class="card-footer">
-            <p><%= lawyer.professional_email %></p>
-            <p>Member since 10/05/18</p>
+            <p><%= lawyer.user.email %></p>
+            <p>Member since <%= lawyer.created_at.strftime("%Y-%m-%d") %></p>
           </div>
         </div>
       </div>
