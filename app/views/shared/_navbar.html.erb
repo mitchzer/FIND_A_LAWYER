@@ -9,7 +9,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
       <% if user_signed_in? %>
-      <span>Currently logged as <%= current_user.first_name %> </span>
+      <span style="margin-right: 1.5em;">Currently logged as <%= current_user.first_name.capitalize %></span>
       <!-- Links when logged in -->
       <%= form_tag lawyers_path, class: "form-inline", method: :get do %>
       <%= text_field_tag 'term', params[:term], placeholder: "Search Lawyers", class: "form-control" %>
