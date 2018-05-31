@@ -1,5 +1,5 @@
 import "bootstrap";
-import mapping from "../components/map"
+import mapping from "../components/map";
 
 const mapElement = document.getElementById("map");
 
