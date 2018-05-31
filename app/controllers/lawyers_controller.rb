@@ -4,13 +4,14 @@ class LawyersController < ApplicationController
 
     @lawyer_markers = Lawyer.where.not(latitude: nil, longitude: nil)
 
-    @mapping = @lawyer_markers.map do |marker|
+    @mapping = @lawyer_markers.map do |lawyer|
       {
         lat: lawyer.latitude,
         lng: lawyer.longitude
       }
 
     end
+
   end
 
   def show
