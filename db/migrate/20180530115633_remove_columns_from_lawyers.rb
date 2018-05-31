@@ -7,5 +7,6 @@ class RemoveColumnsFromLawyers < ActiveRecord::Migration[5.2]
     remove_column :lawyers, :languages
     remove_column :lawyers, :professional_phone_number
     remove_column :lawyers, :description
+    change_column :table_name, :column_name, :date
   end
 end
