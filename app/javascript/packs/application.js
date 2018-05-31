@@ -36,4 +36,5 @@ const mapElement = document.getElementById("map");
 
 mapping(mapElement);
 
-
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
