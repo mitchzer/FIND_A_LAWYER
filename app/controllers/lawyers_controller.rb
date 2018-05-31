@@ -38,6 +38,7 @@ class LawyersController < ApplicationController
   def create
     @lawyer = Lawyer.new(lawyer_params)
     @lawyer.user = current_user
+    @lawyer.professional_email = current_user.email
     authorize @lawyer
     if @lawyer.save
       redirect_to lawyers_path
