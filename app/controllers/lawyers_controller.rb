@@ -1,9 +1,14 @@
 class LawyersController < ApplicationController
 
   def index
+    if params[:term]
+      @lawyers = policy_scope(Lawyer).search_by_specialties_and_address(params[:term])
+    else
+      # @lawyers = Lawyer.all
     @lawyers = policy_scope(Lawyer)
+    end
 
-    @lawyer_markers = Lawyer.where.not(latitude: nil, longitude: nil)
+    @lawyer_markers = @lawyers.where.not(latitude: nil, longitude: nil)
 
     @mapping = @lawyer_markers.map do |lawyer|
       {
