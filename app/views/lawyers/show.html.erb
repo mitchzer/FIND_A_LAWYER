@@ -6,9 +6,7 @@
       <div class="main-content">
         <h2 style="color: black"><%= @lawyer.user.first_name %></h2>
         <p>Speciality: <%= @lawyer.specialty.name %></p>
-
         <img src='https://kitt.lewagon.com/placeholder/users/alex-felix'  width="130">
-
         <a href="#" class="btn btn-primary">Make an appointment</a>
       </div>
     </div>
@@ -16,17 +14,11 @@
     <div class="description">
       <div class="description-content">
         <h2 style="color: black; margin-bottom: 15px;">Why hire <%= @lawyer.user.first_name %> ?</h2>
-        <br>
-        <p class="text-justify" style="color: black;">
-         <%= @lawyer.qualification %>
-       </p>
-       <p>
-        Location: <%= @lawyer.address.capitalize %>
-      </p>
-      <p>
-        Get in touch: <%= @lawyer.user.email %>
-      </p>
-    </div>
+
+        <p class="text-justify" style="color: black;"><%= @lawyer.qualification %></p>
+        <p>Location: <%= @lawyer.address.capitalize %></p>
+        <p>Get in touch: <%= @lawyer.user.email %></p>
+      </div>
   </div>
 </div>
 </div>
