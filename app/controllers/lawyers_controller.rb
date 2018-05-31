@@ -6,6 +6,17 @@ class LawyersController < ApplicationController
       # @lawyers = Lawyer.all
     @lawyers = policy_scope(Lawyer)
     end
+
+    @lawyer_markers = @lawyers.where.not(latitude: nil, longitude: nil)
+
+    @mapping = @lawyer_markers.map do |lawyer|
+      {
+        lat: lawyer.latitude,
+        lng: lawyer.longitude
+      }
+
+    end
+
   end
 
   def show
