@@ -11,6 +11,23 @@
       </div>
     </div>
 
+<%= simple_form_for [@lawyer, Appointment.new] do |f| %>
+  <div class="modal-body">
+      <div class="form-inputs">
+        <div class="form-row">
+          <%= f.input :date, as: :string, wrapper_html: { :id => "appointment_start_date", :class => "inline_field_wrapper" } %>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+
+    <%= f.submit :submit, class: "btn btn-base btn-brand" %>
+  </div>
+<% end %>
+
+
+
+
     <div class="description">
       <div class="description-content">
         <h2 style="color: black; margin-bottom: 15px;">Why hire <%= @lawyer.user.first_name %> ?</h2>
@@ -19,6 +36,12 @@
         <p>Location: <%= @lawyer.address.capitalize %></p>
         <p>Get in touch: <%= @lawyer.user.email %></p>
       </div>
+      <% if current_user == @lawyer.user %>
+        <%= link_to "edit my profile", edit_lawyer_path %>
+      <% end %>
+      <% if current_user == @lawyer.user %>
+        <%= link_to "delete my profile", lawyer_path(@lawyer), method: :delete, data: {confirm: "Are you sure you want to delete your profile ?"} %>
+      <% end %>
   </div>
 </div>
 </div>
