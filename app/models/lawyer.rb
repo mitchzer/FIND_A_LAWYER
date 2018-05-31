@@ -7,7 +7,9 @@ class Lawyer < ApplicationRecord
       user: [ :first_name ]
     },
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true,
+        any_word: true
+       } # <-- now `superman batm` will return something!
     }
 
   has_many :appointments
