@@ -8,22 +8,22 @@
         <p>Speciality: <%= @lawyer.specialty.name %></p>
       <%= cl_image_tag @lawyer.photo, :width=>250, :height=>250, :gravity=>"face", :radius=>"max", :crop=>"crop" %>
         <a href="#" class="btn btn-primary">Make an appointment</a>
+        <img src='https://kitt.lewagon.com/placeholder/users/alex-felix'  width="130">
+        <%= simple_form_for [@lawyer, Appointment.new] do |f| %>
+        <div class="modal-body">
+          <div class="form-inputs">
+            <div class="form-row">
+              <%= f.input :date, as: :string, wrapper_html: { :id => "appointment_start_date", :class => "inline_field_wrapper" } %>
+              <%= f.input :time, as: :string %>
+              <%= f.submit :submit, class: "btn btn-base btn-brand", value: "Book" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
 
-<%= simple_form_for [@lawyer, Appointment.new] do |f| %>
-  <div class="modal-body">
-      <div class="form-inputs">
-        <div class="form-row">
-          <%= f.input :date, as: :string, wrapper_html: { :id => "appointment_start_date", :class => "inline_field_wrapper" } %>
-        </div>
-      </div>
-  </div>
-  <div class="modal-footer">
 
-    <%= f.submit :submit, class: "btn btn-base btn-brand" %>
-  </div>
-<% end %>
 
 
 
@@ -37,11 +37,11 @@
         <p>Get in touch: <%= @lawyer.user.email %></p>
       </div>
       <% if current_user == @lawyer.user %>
-        <%= link_to "edit my profile", edit_lawyer_path %>
+      <%= link_to "edit my profile", edit_lawyer_path %>
       <% end %>
       <% if current_user == @lawyer.user %>
-        <%= link_to "delete my profile", lawyer_path(@lawyer), method: :delete, data: {confirm: "Are you sure you want to delete your profile ?"} %>
+      <%= link_to "delete my profile", lawyer_path(@lawyer), method: :delete, data: {confirm: "Are you sure you want to delete your profile ?"} %>
       <% end %>
+    </div>
   </div>
-</div>
 </div>
