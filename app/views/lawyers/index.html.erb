@@ -31,8 +31,8 @@
                 </div>
                 <%= link_to lawyer_path(lawyer), class: "card-link" do %>
                 <% end %>
+                <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill" %></div>
               </div>
-              <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill" %></div>
               <div class="card-footer">
                 <p><%= lawyer.professional_email %></p>
                 <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
@@ -47,13 +47,15 @@
                 </div>
                 <%= link_to lawyer_path(lawyer), class: "card-link" do %>
                 <% end %>
-              </div>
               <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill" %></div>
+              </div>
               <div class="card-footer">
                 <p><%= lawyer.professional_email %></p>
                 <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
 
+
             <% elsif lawyer.specialty.name === "COMMERCIAL" %>
+
 
               <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('http://remixreading.org/wp-content/uploads/2014/09/Local-Business-Insurance-Agents.jpg');">
                 <span class="card-category"><%= lawyer.specialty.name %></span>
@@ -63,8 +65,8 @@
                 </div>
                 <%= link_to lawyer_path(lawyer), class: "card-link" do %>
                 <% end %>
-              </div>
               <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill" %></div>
+              </div>
               <div class="card-footer">
                 <p><%= lawyer.professional_email %></p>
                 <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
@@ -79,8 +81,8 @@
                 </div>
                 <%= link_to lawyer_path(lawyer), class: "card-link" do %>
                 <% end %>
-              </div>
               <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill" %></div>
+              </div>
               <div class="card-footer">
                 <p><%= lawyer.professional_email %></p>
                 <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
@@ -95,8 +97,8 @@
                 </div>
                 <%= link_to lawyer_path(lawyer), class: "card-link" do %>
                 <% end %>
-              </div>
               <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill" %></div>
+              </div>
               <div class="card-footer">
                 <p><%= lawyer.professional_email %></p>
                 <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
@@ -105,8 +107,8 @@
 
               <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
               <span class="card-category"><%= lawyer.specialty.name %></span>
-              <div class="card-description">
                 <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill"%></div>
+              <div class="card-description">
                 <h2><%= lawyer.user.first_name.titleize %></h2>
                 <p><%= lawyer.address %></p>
               </div>
