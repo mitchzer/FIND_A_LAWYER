@@ -31,7 +31,7 @@
             </div>
             <div class="card-footer">
               <p><%= lawyer.professional_email %></p>
-              <p>Member since 10/05/18</p>
+              <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
 
             </div>
           </div>
