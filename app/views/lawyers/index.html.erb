@@ -20,18 +20,101 @@
       <div class="cards">
 
           <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
+
+            <% if lawyer.specialty.name === "FAMILY" %>
+
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://aifs.gov.au/sites/default/files/styles/publication_main/public/shutterstock_282305945.jpg?itok=DDd4w6Ol');">
+                <span class="card-category"><%= lawyer.specialty.name %></span>
+                <div class="card-description">
+                  <h2><%= lawyer.user.first_name.titleize %></h2>
+                  <p><%= lawyer.address %></p>
+                </div>
+                <%= link_to lawyer_path(lawyer), class: "card-link" do %>
+                <% end %>
+              </div>
+              <div class="card-footer">
+                <p><%= lawyer.professional_email %></p>
+                <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+
+            <% elsif lawyer.specialty.name === "EMPLOYMENT" %>
+
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://cdn2.thecoverage.my/wp-content/uploads/2017/09/banff-alberta-jobs-610x350.jpg');">
+                <span class="card-category"><%= lawyer.specialty.name %></span>
+                <div class="card-description">
+                  <h2><%= lawyer.user.first_name.titleize %></h2>
+                  <p><%= lawyer.address %></p>
+                </div>
+                <%= link_to lawyer_path(lawyer), class: "card-link" do %>
+                <% end %>
+              </div>
+              <div class="card-footer">
+                <p><%= lawyer.professional_email %></p>
+                <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+
+            <% elsif lawyer.specialty.name === "COMMERCIAL" %>
+
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('http://remixreading.org/wp-content/uploads/2014/09/Local-Business-Insurance-Agents.jpg');">
+                <span class="card-category"><%= lawyer.specialty.name %></span>
+                <div class="card-description">
+                  <h2><%= lawyer.user.first_name.titleize %></h2>
+                  <p><%= lawyer.address %></p>
+                </div>
+                <%= link_to lawyer_path(lawyer), class: "card-link" do %>
+                <% end %>
+              </div>
+              <div class="card-footer">
+                <p><%= lawyer.professional_email %></p>
+                <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+
+            <% elsif lawyer.specialty.name === "TAX" %>
+
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://smedia2.intoday.in/btmt/images/stories/tax-calculation-660_013117063039.jpg');">
+                <span class="card-category"><%= lawyer.specialty.name %></span>
+                <div class="card-description">
+                  <h2><%= lawyer.user.first_name.titleize %></h2>
+                  <p><%= lawyer.address %></p>
+                </div>
+                <%= link_to lawyer_path(lawyer), class: "card-link" do %>
+                <% end %>
+              </div>
+              <div class="card-footer">
+                <p><%= lawyer.professional_email %></p>
+                <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+
+            <% elsif lawyer.specialty.name === "CRIMINAL" %>
+
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/176/36/78479965.jpg');">
+                <span class="card-category"><%= lawyer.specialty.name %></span>
+                <div class="card-description">
+                  <h2><%= lawyer.user.first_name.titleize %></h2>
+                  <p><%= lawyer.address %></p>
+                </div>
+                <%= link_to lawyer_path(lawyer), class: "card-link" do %>
+                <% end %>
+              </div>
+              <div class="card-footer">
+                <p><%= lawyer.professional_email %></p>
+                <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+
+            <% else %>
+
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
               <span class="card-category"><%= lawyer.specialty.name %></span>
               <div class="card-description">
                 <h2><%= lawyer.user.first_name.titleize %></h2>
                 <p><%= lawyer.address %></p>
               </div>
               <%= link_to lawyer_path(lawyer), class: "card-link" do %>
-              <% end %>
+
+            <% end %>
+
             </div>
+
             <div class="card-footer">
               <p><%= lawyer.professional_email %></p>
               <p>Member since <%= lawyer.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+
+              <% end %>
 
             </div>
           </div>
