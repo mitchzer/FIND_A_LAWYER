@@ -2,7 +2,24 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto,fl_lossy/fc/3051938-inline-i-3-why-being-a-good-lawyer-means-being-a-great-actor.jpg');">
   <div class="banner-content">
     <h1>Welcome to Find a Lawyer !</h1>
-    <p>We can make it legal</p>
+
+    <p>
+      <span id="banner-typed-text">
+
+      </span>
+    </p>
+
+
+
+    <script>
+    var typed = new Typed('.element', {
+  strings: ["We can make it legal.", "Second sentence."],
+  typeSpeed: 30
+});
+
+ typed
+
+</script>
 
       <%= form_tag lawyers_path, class: "form-inline", method: :get do %>
       <%= text_field_tag 'term', params[:term], placeholder: "Robert Kardashian", class: "form-control" %>
@@ -36,6 +53,7 @@
 
   </div>
 </div>
+
 
 <div class="wrapper-grey">
       <div class="container">
