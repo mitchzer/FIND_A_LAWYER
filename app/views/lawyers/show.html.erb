@@ -6,7 +6,7 @@
       <div class="main-content">
         <h2 style="color: black"><%= @lawyer.user.first_name %></h2>
         <p>Speciality: <%= @lawyer.specialty.name %></p>
-        <img src='https://kitt.lewagon.com/placeholder/users/alex-felix'  width="130">
+      <%= cl_image_tag @lawyer.photo, :width=>250, :height=>250, :gravity=>"face", :radius=>"max", :crop=>"crop" %>
         <a href="#" class="btn btn-primary">Make an appointment</a>
       </div>
     </div>

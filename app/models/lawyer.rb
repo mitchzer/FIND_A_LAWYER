@@ -21,4 +21,6 @@ class Lawyer < ApplicationRecord
 
   validates :user_id, uniqueness: { scope: :user_id, message: "You already have a lawyer profile !" }
 
+  mount_uploader :photo, PhotoUploader
+
 end

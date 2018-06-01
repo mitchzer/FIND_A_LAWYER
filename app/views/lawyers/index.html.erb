@@ -23,6 +23,7 @@
             <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://www.ihk.ch/sites/default/files/styles/panopoly_image_original/public/recht.jpg?itok=dE7wOzri');">
               <span class="card-category"><%= lawyer.specialty.name %></span>
               <div class="card-description">
+                <div class="card-lawyer"><%= cl_image_tag lawyer.photo, :width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"fill"%></div>
                 <h2><%= lawyer.user.first_name.titleize %></h2>
                 <p><%= lawyer.address %></p>
               </div>
