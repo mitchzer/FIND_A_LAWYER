@@ -1,4 +1,5 @@
 import "bootstrap";
+import './application.css';
 
 import flatpickr from 'flatpickr';
 
