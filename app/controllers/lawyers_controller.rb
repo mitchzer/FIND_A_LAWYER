@@ -60,9 +60,12 @@ class LawyersController < ApplicationController
 
   def destroy
     @lawyer = Lawyer.find(params[:id])
-    @lawyer.destroy
-    authorize @lawyer
-    redirect_to lawyers_path
+    if @lawyer.appointments.empty?
+      @lawyer.destroy
+      redirect_to lawyers_path
+    else
+      render :file => 'public/DELETING_ERROR.html', :status => :not_found, :layout => false
+     end
   end
 
   private
