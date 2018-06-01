@@ -6,8 +6,8 @@
       <div class="main-content">
         <h2 style="color: black"><%= @lawyer.user.first_name %></h2>
         <p>Speciality: <%= @lawyer.specialty.name %></p>
-      <%= cl_image_tag @lawyer.photo, :width=>250, :height=>250, :gravity=>"face", :radius=>"max", :crop=>"crop" %>
-        <a href="#" class="btn btn-primary">Make an appointment</a>
+
+      <%= cl_image_tag @lawyer.photo, :width=>250, :height=>250, :gravity=>"face", :radius=>"max", :crop=>"fill" %>
         <%= simple_form_for [@lawyer, Appointment.new] do |f| %>
         <div class="modal-body">
           <div class="form-inputs">
