@@ -2,23 +2,19 @@
 
 
   <div class="profile text-center">
-    <div class="main">
-      <div class="main-content">
-        <h2 style="color: black"><%= @lawyer.user.first_name %></h2>
+    <div class="pic">
+      <div class="description-content text-center">
+        <h2 style="color: black"><%= @lawyer.user.first_name.titleize %></h2>
         <p>Speciality: <%= @lawyer.specialty.name %></p>
 
-      <%= cl_image_tag @lawyer.photo, :width=>250, :height=>250, :gravity=>"face", :radius=>"max", :crop=>"fill" %>
-        <%= simple_form_for [@lawyer, Appointment.new] do |f| %>
-        <div class="modal-body">
-          <div class="form-inputs">
-            <div class="form-row">
-              <%= f.input :date, as: :string, wrapper_html: { :id => "appointment_start_date", :class => "inline_field_wrapper" } %>
-              <%= f.input :time, as: :string %>
-              <%= f.submit :submit, class: "btn btn-base btn-brand", value: "Book" %>
-            </div>
-          </div>
-        </div>
-        <% end %>
+      <%= cl_image_tag @lawyer.photo, :width=>200, :height=>200, :gravity=>"face", :radius=>"max", :crop=>"fill" %>
+
+      <br>
+      <br>
+
+
+      <p>Location: <%= @lawyer.address.capitalize %></p>
+
       </div>
     </div>
 
@@ -27,13 +23,14 @@
 
 
 
-    <div class="description">
-      <div class="description-content">
-        <h2 style="color: black; margin-bottom: 15px;">Why hire <%= @lawyer.user.first_name %> ?</h2>
+    <div class="bio text-center">
+      <div class="description-content text-center">
+        <h2 class="text-justify" style="color: black; margin-bottom: 15px; align-items: center; font-size: 24px; text-align: center;">More about <%= @lawyer.user.first_name.titleize %> </h2>
 
-        <p class="text-justify" style="color: black;"><%= @lawyer.qualification %></p>
-        <p>Location: <%= @lawyer.address.capitalize %></p>
-        <p>Get in touch: <%= @lawyer.user.email %></p>
+        <p class="text-justify" style="color: black; font-size: 18px; text-align: center; margin-bottom: 2px"><%= @lawyer.qualification %></p>
+
+        <p class="text-justify" style="color: black; font-size: 18px; text-align: center;">Get in touch: <%= @lawyer.user.email %></p>
+
       </div>
       <% if current_user == @lawyer.user %>
       <%= link_to "edit my profile", edit_lawyer_path %>
@@ -42,5 +39,28 @@
       <%= link_to "delete my profile", lawyer_path(@lawyer), method: :delete, data: {confirm: "Are you sure you want to delete your profile ?"} %>
       <% end %>
     </div>
+
+    <div class="book">
+      <div class="description-content text-center">
+
+         <h2 class="text-justify" style="color: black; margin-bottom: 15px; align-items: center; font-size: 24px; text-align: center;">Make an appointment </h2>
+
+
+
+    <%= simple_form_for [@lawyer, Appointment.new] do |f| %>
+        <div class="modal-body">
+          <div class="form-inputs form-inline">
+            <div class="form-row" style="color: black">
+              <%= f.input :date, as: :string, wrapper_html: { :id => "appointment_start_date", :class => "inline_field_wrapper"}  %>
+              <%= f.input :time, as: :string %>
+              <%= f.submit :submit, class: "btn btn-base btn-brand", value: "Book", style: "width: 200px;" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+    </div>
+    </div>
+
   </div>
 </div>
