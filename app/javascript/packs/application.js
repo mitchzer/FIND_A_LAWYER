@@ -19,14 +19,6 @@ if (startDateinput) {
     }
 
   );
-
-  // const endDateCalendar =
-  //   flatpickr(endDateinput, {
-  //     dateFormat: 'd-m-Y',
-  //   });
-
-
-
 }
 
 import mapping from "../components/map";
