@@ -1,25 +1,52 @@
 .profile {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 50% 50%;
-  height: calc(100vh - 150px);
+  grid-template-rows: 25% 25% 25% 25%;
+  height: calc(575px);
   padding: 30px;
   opacity: 0.92;
 }
 .profile .main {
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 4;
   grid-column: 1 / span 1;
 }
 .profile .description {
   grid-row: 1 / span 2;
   grid-column: 2 / span 3;
 }
-.main, .description, .stat {
+
+.profile .book {
+  grid-row: 3 / span 2;
+  grid-column: 2 / span 3;
+}
+
+.profile .bio {
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 3;
+  background: #F4F4F4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 10px;
+  // display: flex;
+}
+
+.profile .pic {
+  grid-row: 1 / span 4;
+  grid-column: 1 / span 1;
+  background: #F4F4F4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 10px;
+  // display: flex;
+}
+
+.main, .description, .stat, .book, {
   background: #F4F4F4;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 20px;
   margin: 10px;
   display: flex;
+  vertical-align: center;
   // align-items: center;
   // justify-content: space-around;
 }
@@ -65,4 +92,8 @@
 .description p {
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
+}
+
+.form-control-label {
+  margin-right: 10px;
 }
