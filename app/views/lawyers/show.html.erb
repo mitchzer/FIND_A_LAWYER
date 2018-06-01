@@ -12,13 +12,10 @@
           <div class="form-inputs">
             <div class="form-row">
               <%= f.input :date, as: :string, wrapper_html: { :id => "appointment_start_date", :class => "inline_field_wrapper" } %>
+              <%= f.input :time, as: :string %>
               <%= f.submit :submit, class: "btn btn-base btn-brand", value: "Book" %>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-
-
         </div>
         <% end %>
       </div>

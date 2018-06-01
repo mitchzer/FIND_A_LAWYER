@@ -12,11 +12,6 @@ if (startDateinput) {
   flatpickr(startDateinput, {
     minDate: 'today',
     dateFormat: 'd-m-Y',
-    enableTime: true,
-    minTime: "09:00"
-
-
-
     }
 
   );
@@ -25,9 +20,27 @@ if (startDateinput) {
   //   flatpickr(endDateinput, {
   //     dateFormat: 'd-m-Y',
   //   });
+}
 
+const startTimeinput = document.getElementById('appointment_time');
+// const endDateinput = document.getElementById('appointment_end_date');
 
+// flatpickr("#appointment_start_date");
 
+if (startTimeinput) {
+
+  flatpickr(startTimeinput, {
+    noCalendar: true,
+    enableTime: true,
+    minTime: "09:00"
+    }
+
+  );
+
+  // const endDateCalendar =
+  //   flatpickr(endDateinput, {
+  //     dateFormat: 'd-m-Y',
+  //   });
 }
 
 
