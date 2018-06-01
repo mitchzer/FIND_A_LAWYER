@@ -1,2 +1,21 @@
-<h1>Appointment Confirmation!</h1>
-<%= @appointment.lawyer.user.first_name %>
+<h1 style="text-align: center; font-weight: 120px">Your Appointment is confirmed <br /> with: <br />
+<br>
+  <%= @appointment.lawyer.user.first_name %></h1>
+<br>
+<br>
+<br>
+<br>
+<br><!--
+<div style="color: #00A75A; text-align: center; font-weight: 32px"><%= @appointment.lawyer.user.first_name %></div> -->
+<div style="text-align: center; color: #293168; font-size:40px; ">
+<p>Date: <%= @appointment.date %> </p>
+<br>
+<p>Time: <%= @appointment.time %> </p>
+</div>
+<br>
+<br>
+
+       <div style="text-align: center;">
+<%= link_to "Back to Lawyer's list", lawyers_path, class: "btn btn-primary"%>
+</div>
+
